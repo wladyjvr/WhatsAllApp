@@ -12,7 +12,7 @@ This extension has the permission to read from your WhatsApp Web screen. As you 
 
 ## Instructions
 1. Open up chrome://extensions/ 
-2. Drag and drop [dist/WhatsAllApp.crx](dist/WhatsAllApp.crx) into the Extensions window
+2. Drag and drop [dist/WhatsAllApp.crx](dist/WhatsAllApp.crx) into the Extensions window. __Make sure you click Download otherwise you'll just download an html file instead of the actual extension__
 3. Goto WhatsApp Web, a green button should appear, click it to open the UI
 4. Enter a range of phonenumbers you want to enumerate, more than 500 numbers is probably a little much 
 5. After a few seconds you'll see a table of phonenumbers, profile pics, about texts and on/offline statuses
