@@ -28,6 +28,11 @@ This extension has the permission to read from your WhatsApp Web screen. As you 
 
 
 ## FAQ
+* __How about rate limiting?__
+
+   There is some kind of rate limiting in place but what exactly the limits are and their penalties for exceeding them, I don't know yet. Sometimes I get a '427 Too many requests' but a few minutes later I can continue using the API calls.
+
 * __Why is this extension not available in the Chrome Web Store?__
 
    Because it's a PoC and because I'll have to pay $5. Since I'm Dutch I don't want to pay unless I have absolutely no other choice. So there you go :)
+   
