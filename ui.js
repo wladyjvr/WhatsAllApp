@@ -55,7 +55,7 @@
                 for(;clientNr <= lastClientNrForLoop && clientNr <= lastNr; clientNr++) {
                     divClientBoxes.appendChild(createClientBox(clientNr, "", "" ));
                 }
-                if (clientNr === lastNr)
+                if (clientNr > lastNr)
                     clearInterval(clientBoxCreateT);
             }, 500);
 
