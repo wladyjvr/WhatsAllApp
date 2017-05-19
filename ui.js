@@ -52,10 +52,10 @@
             var clientBoxCreateT = window.setInterval(function(){
                 console.log('Next 100...');
                 var lastClientNrForLoop = clientNr + 100;
-                for(;clientNr < lastClientNrForLoop && clientNr < lastNr; clientNr++) {
+                for(;clientNr <= lastClientNrForLoop && clientNr <= lastNr; clientNr++) {
                     divClientBoxes.appendChild(createClientBox(clientNr, "", "" ));
                 }
-                if (clientNr === lastNr)
+                if (clientNr > lastNr)
                     clearInterval(clientBoxCreateT);
             }, 500);
 
