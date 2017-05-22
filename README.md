@@ -28,6 +28,10 @@ This extension has the permission to read from your WhatsApp Web screen. As you 
 
 
 ## FAQ
+* __Can you update the script so it includes feature X?__
+
+   Maybe: tell me (loran@ralon.nl) what feature you'd like to have included and I'll make you a nice offer :)
+
 * __How about rate limiting?__
 
    There is some kind of rate limiting in place but what exactly the limits are and their penalties for exceeding them, I don't know yet. Sometimes I get a '427 Too many requests' but a few minutes later I can continue using the API calls.
