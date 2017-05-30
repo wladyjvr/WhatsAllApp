@@ -28,6 +28,10 @@ This extension has the permission to read from your WhatsApp Web screen. As you 
 
 
 ## FAQ
+* __Can you update the script so it becomes a mass surveillance tool?__
+
+   No, it has its privacy concerns already as it is. Ask your local secret service for more info.
+   
 * __Can you update the script so it includes feature X?__
 
    Maybe: tell me (loran@ralon.nl) what feature you'd like to have included and I'll make you a nice offer :)
