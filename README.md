@@ -20,7 +20,7 @@ This extension has the permission to read from your WhatsApp Web screen. As you 
 7. The extension should appear at the top of the list
 
 ## Usage
-1. Goto WhatsApp Web, a green button should appear, click it to open the UI
+1. Go to WhatsApp Web, a green button should appear, click it to open the UI
 2. Enter a range of phonenumbers you want to enumerate, more than 500 numbers is probably a little much 
 3. After a few seconds you'll see a table of phonenumbers, profile pics, about texts and on/offline statuses
 4. Every 10 sec, the script checks if someone is online and places that number at the beginning of the table
