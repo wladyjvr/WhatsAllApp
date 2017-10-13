@@ -34,7 +34,8 @@ This extension has the permission to read from your WhatsApp Web screen. As you 
    
 * __Can you update the script so it includes feature X?__
 
-   Maybe: tell me (loran@ralon.nl) what feature you'd like to have included and I'll make you a nice offer :)
+   ~~Maybe: tell me (loran@ralon.nl) what feature you'd like to have included and I'll make you a nice offer :)~~
+   No, at this moment I don't have the time.
 
 * __How about rate limiting?__
 
