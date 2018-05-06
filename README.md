@@ -1,3 +1,5 @@
+** Update 06-05-2018: it looks like WhatsApp changed the API a little. Because of that, the script doesn't show online/offline statuses. As soos as I have the time, I'll look into it' **
+
 # WhatsAllApp
 Chrome Extension that creates a UI overlay for WhatsApp Web to enumerate phone numbers, profile pics, about texts and online statuses.
 
