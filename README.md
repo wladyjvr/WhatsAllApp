@@ -1,4 +1,15 @@
-** Update 06-05-2018: it looks like WhatsApp changed the API a little. Because of that, the script doesn't show online/offline statuses. As soos as I have the time, I'll look into it' **
+__Update 25-05-2018: WhatsApp has reworked its client side code and maybe also some back end code. Anyway, this script doesn't work anymore at this moment. A quick look tells me that I can write a new WhatsAllApp script but it will take some time from my side which I don't have available as free time.__
+
+Put it simple: If I'm compensated for my time, I can put the research for this script to the top of my priority list. Let me be very clear before you decide to chip in: I'm not guaranteeing that the script will work again. I do guarantee that I will do the best I can to make this script work again. There are no refunds! 
+
+It takes me a couple of hours to research this.
+Let's say that $300 as a total is enough to do a preliminary research.
+
+Bitcoin address: 1DTqXrfnQrUutj7bGtKuhc5hP2DhZLXMC8
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PHVYMCEVZNLPA)
+
+__Received at this moment:__ $0.00
 
 # WhatsAllApp
 Chrome Extension that creates a UI overlay for WhatsApp Web to enumerate phone numbers, profile pics, about texts and online statuses.
