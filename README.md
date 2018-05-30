@@ -1,16 +1,13 @@
-__Update 25-05-2018: WhatsApp has reworked its client side code and maybe also some back end code. Anyway, this script doesn't work anymore at this moment. A quick look tells me that I can write a new WhatsAllApp script but it will take some time from my side which I don't have available as free time.__
+The script should work again for now. We'll find out for how long when WhatsApp decides to change their API...
 
-Put it simple: If I'm compensated for my time, I can put the research for this script to the top of my priority list. Let me be very clear before you decide to chip in: I'm not guaranteeing that the script will work again. I do guarantee that I will do the best I can to make this script work again. There are no refunds! 
+### Donations are still welcome :)
 
-It takes me a couple of hours to research this.
-Let's say that $300 as a total is enough to do a preliminary research.
+A special thanks to one guy who already send me $10! I don't know who the user is :(
 
+If you make some money with it, I'll like to have a little slice of the cake as well:
 Bitcoin address: 1DTqXrfnQrUutj7bGtKuhc5hP2DhZLXMC8
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PHVYMCEVZNLPA)
-
-__Received at this moment:__ $10.00
-
 # WhatsAllApp
 Chrome Extension that creates a UI overlay for WhatsApp Web to enumerate phone numbers, profile pics, about texts and online statuses.
 
@@ -41,6 +38,10 @@ This extension has the permission to read from your WhatsApp Web screen. As you 
 
 
 ## FAQ
+* __I can't see online/offline status of users?__
+
+   Yeah, that's a bug that needs some fixing. 
+   
 * __Can you update the script so it becomes a mass surveillance tool?__
 
    No, it has its privacy concerns already as it is. Ask your local secret service for more info.
