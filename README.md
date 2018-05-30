@@ -9,7 +9,7 @@ Bitcoin address: 1DTqXrfnQrUutj7bGtKuhc5hP2DhZLXMC8
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PHVYMCEVZNLPA)
 
-__Received at this moment:__ $0.00
+__Received at this moment:__ $10.00
 
 # WhatsAllApp
 Chrome Extension that creates a UI overlay for WhatsApp Web to enumerate phone numbers, profile pics, about texts and online statuses.
