@@ -5,6 +5,7 @@ The script should work again for now. We'll find out for how long when WhatsApp 
 A special thanks to one guy who already send me $10! I don't know who the user is :(
 
 If you make some money with it, I'll like to have a little slice of the cake as well:
+
 Bitcoin address: 1DTqXrfnQrUutj7bGtKuhc5hP2DhZLXMC8
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PHVYMCEVZNLPA)
