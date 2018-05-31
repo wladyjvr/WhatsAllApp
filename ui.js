@@ -11,6 +11,11 @@
 (function() {
     'use strict';
 	
+	function sleep(ms) {
+	  return new Promise(resolve => setTimeout(resolve, ms));
+	}
+
+	
 	var whenStoreIsReady = function () {
 		console.log('Starting WhatsAllApp UI')
 
@@ -280,42 +285,9 @@
 	var app2ScriptLocation = '';
 	window.WLAPStore = {};
 	window.WLAPWAPStore = {};
-
-	for (var i=0; i<scripts.length;i++) {
-		var src = scripts[i].src;
-		if (regExAppScr.exec(src) != null) {
-			appScriptLocation = src;
-		}
-		
-		if (regExApp2Scr.exec(src) != null) {
-			app2ScriptLocation = src;
-		}
-	}
-
-	fetch(app2ScriptLocation).then( e => {
-		var reader = e.body.getReader();
-		var js_src = "";	
-		
-		return reader.read().then(function readMore({done, value}){
-			var td = new TextDecoder("utf-8");
-			var str_value = td.decode(value);
-			if (done) {
-				js_src += str_value;
-				var regExDynNameStore = /'"(\w+)"':function\(e,t,a\)\{\"use strict\";e\.exports=\{AllStarredMsgs:/;
-				var res = regExDynNameStore.exec(js_src);
-				var funcName = res[1];
-				webpackJsonp([], { [funcName]: (x, y, z) => window.WLAPStore = z('"'+funcName+'"') }, funcName);
-				console.log('Created Store');
-				return;
-			}		
-			
-			js_src += str_value;
-			return reader.read().then(readMore);
-			
-		})
-		
-	}).then( () => {
-		fetch(appScriptLocation).then( e => {
+	
+	var grepFunctionNames = function() {
+		fetch(app2ScriptLocation).then( e => {
 			var reader = e.body.getReader();
 			var js_src = "";	
 			
@@ -324,21 +296,70 @@
 				var str_value = td.decode(value);
 				if (done) {
 					js_src += str_value;
-					var regExDynNameStore = /Wap:n\('"(\w+)"'\)/;
+					var regExDynNameStore = /'"(\w+)"':function\(e,t,a\)\{\"use strict\";e\.exports=\{AllStarredMsgs:/;
 					var res = regExDynNameStore.exec(js_src);
 					var funcName = res[1];
-					webpackJsonp([], { [funcName]: (x, y, z) => window.WLAPWAPStore = z('"'+funcName+'"') }, funcName);
-					console.log('Created Store WAP');
-					whenStoreIsReady()
+					webpackJsonp([], { [funcName]: (x, y, z) => window.WLAPStore = z('"'+funcName+'"') }, funcName);
+					console.log('Created Store');
 					return;
 				}		
 				
 				js_src += str_value;
 				return reader.read().then(readMore);
 				
-			})	
+			})
+			
+		}).then( () => {
+			fetch(appScriptLocation).then( e => {
+				var reader = e.body.getReader();
+				var js_src = "";	
+				
+				return reader.read().then(function readMore({done, value}){
+					var td = new TextDecoder("utf-8");
+					var str_value = td.decode(value);
+					if (done) {
+						js_src += str_value;
+						var regExDynNameStore = /Wap:n\('"(\w+)"'\)/;
+						var res = regExDynNameStore.exec(js_src);
+						var funcName = res[1];
+						webpackJsonp([], { [funcName]: (x, y, z) => window.WLAPWAPStore = z('"'+funcName+'"') }, funcName);
+						console.log('Created Store WAP');
+						whenStoreIsReady()
+						return;
+					}		
+					
+					js_src += str_value;
+					return reader.read().then(readMore);
+					
+				})	
+			})
 		})
-	})
+	}
+	
+	var grepScriptTags = async function () {
+		for (var i=0; i<scripts.length;i++) {
+			var src = scripts[i].src;
+			if (regExAppScr.exec(src) != null) {
+				appScriptLocation = src;
+			}
+			
+			if (regExApp2Scr.exec(src) != null) {
+				app2ScriptLocation = src;
+			}
+		}	
+		if (appScriptLocation === '' || app2ScriptLocation == '') {
+			console.log('DOM not ready for WhatsAllApp yet');
+			await sleep(1000);
+			grepScriptTags();
+		} else {
+			console.log('DOM ready for WhatsAllApp! Let\'s continue...');
+			grepFunctionNames();
+		}
+	} 
+
+	grepScriptTags();
+	
+	
 
 
 })();
