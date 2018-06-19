@@ -16,7 +16,14 @@ Checkout the background information at https://www.lorankloeze.nl/2017/05/07/col
 This is a Proof of Concept packed in a Chrome Extension. It's not bug free and you may run into errors. If there was a stage before alpha it would be in that stage. Use it wisely!
 
 ![Extension in action](https://www.lorankloeze.nl/wp-content/uploads/2017/05/whatsapp_script_2.png "Extension in action")
- 
+
+## New functionality
+### Download to zip-file
+You can now download the numbers + their corresponding profile pictures and statuses to a zip-file. The file contains the profile pictures in jpeg format and a csv-file with numbers and statuses. Give it a try, it seems to be still a little buggy.
+
+### Show only active accounts
+I've implemented a checkbox to disable displaying inactive or non-existing accounts.
+
 ## Warning
 This extension has the permission to read from your WhatsApp Web screen. As you can see in the source code, that permission is not used in a bad way. But, take care if you download this extension from anywhere else but this repo!
 
