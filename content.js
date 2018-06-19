@@ -15,4 +15,6 @@ function injectJs(link) {
         (document.head || document.body || document.documentElement).appendChild(scr);
 }
 
+injectJs(chrome.extension.getURL("/lib/jszip.js"));
+injectJs(chrome.extension.getURL("/lib/filesaver.js"));
 injectJs(chrome.extension.getURL("/ui.js"));
