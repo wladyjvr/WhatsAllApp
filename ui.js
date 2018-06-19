@@ -8,12 +8,53 @@
  
 */
 
+
+
 (function() {
     'use strict';
-	
 	function sleep(ms) {
 	  return new Promise(resolve => setTimeout(resolve, ms));
 	}
+	
+	
+	var saveToZip = function() {
+		var zip = new JSZip();
+		
+		// Loop through the visible boxes
+		var boxes = document.getElementsByClassName('indexerClientBox');
+		var csv = '';
+		var nr_of_numbers = boxes.length;
+		var nrOfImgFetchFinished = 0;
+		for (var i=0; i < nr_of_numbers; i++) {
+			var box = boxes[i];
+			var phone = box.getElementsByClassName('indexerPhone')[0].innerText;
+			var statusText = box.getElementsByClassName('indexerStatus')[0].innerText;
+			var imageUrl = box.getElementsByTagName('img')[0].dataset.fullurl;
+			
+			if (imageUrl === undefined) {
+				continue;
+			}
+			
+			zip.fileURL(phone + '.jpg', imageUrl, null, function(){
+				nrOfImgFetchFinished++;
+				console.log('Fetching ' + nrOfImgFetchFinished + ' of ' + nr_of_numbers);
+				if (nrOfImgFetchFinished == nr_of_numbers) {					
+					zip.file('db.csv', csv);
+					zip.generateAsync({type:"blob"})
+					.then(function(content) {
+						saveAs(content, "whats_all_app.zip");
+					});
+				}
+			}, {xhrtype:"blob"})
+			csv += phone + ';' + statusText + ';' + imageUrl + '\n';
+		
+		}		
+		
+		
+		
+	}
+	
+	
 
 	
 	var whenStoreIsReady = function () {
@@ -28,7 +69,9 @@
 
 
 
-		function setupContainerEventListeners() {		
+		function setupContainerEventListeners() {	
+			var btnDownloadZip = document.getElementById('btnDownloadZip');
+		
 			var btnDeactivateWhatsApp = document.getElementById('btnCloseWhatsAllApp');
 			btnDeactivateWhatsApp.addEventListener("click", function( e ) {
 				var divContainer = document.getElementById('statusIndexer');
@@ -69,8 +112,15 @@
 					if (clientNr > lastNr)
 						clearInterval(clientBoxCreateT);
 				}, 500);
+				
+				btnDownloadZip.disabled = false;
 
 
+			});
+			
+			
+			btnDownloadZip.addEventListener("click", function( e ) {
+				saveToZip();
 			});
 
 		}
@@ -136,6 +186,13 @@
 			var chkShowRealAccountsLabel = document.createElement("label");
 			chkShowRealAccountsLabel.appendChild(chkShowRealAccounts);
 			chkShowRealAccountsLabel.innerHTML += 'Only show existing accounts';
+			
+			var btnDownloadZip = document.createElement("button");
+			btnDownloadZip.id = 'btnDownloadZip';
+			btnDownloadZip.innerHTML = 'Download as ZIP';
+			btnDownloadZip.disabled = true;
+			
+			
 
 			containerDiv.appendChild(closeBtnDiv);
 			containerDiv.appendChild(inputFirstNumberLabel);
@@ -145,6 +202,7 @@
 			containerDiv.appendChild(document.createElement("br"));
 			containerDiv.appendChild(btnStartIndexer);
 			containerDiv.appendChild(chkShowRealAccountsLabel);
+			containerDiv.appendChild(btnDownloadZip);
 			containerDiv.appendChild(document.createElement("hr"));
 			var clientBoxesDiv = document.createElement("div");
 			clientBoxesDiv.id = 'divClientBoxes';
@@ -200,13 +258,14 @@
 						imgTag.src = imgSrcNoneFound;
 						imgATag.href = '';
 						if (dontShowNonExisting) {
-							divBox.style.display = 'none';
+							divBox.remove();
 						} else {
 							divBox.style.display = '';							
 						}
 						
 					} else {
-						imgTag.src = d.img;
+						imgTag.src = d.imgFull;
+						imgTag.dataset.fullurl = d.imgFull;
 						imgATag.href = '#';
 						imgATag.addEventListener('click', function(){
 							imgTag.src = d.imgFull;
