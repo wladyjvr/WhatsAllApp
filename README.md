@@ -21,6 +21,9 @@ This is a Proof of Concept packed in a Chrome Extension. It's not bug free and y
 ### Download to zip-file
 You can now download the numbers + their corresponding profile pictures and statuses to a zip-file. The file contains the profile pictures in jpeg format and a csv-file with numbers and statuses. Give it a try, it seems to be still a little buggy.
 
+### Show only active accounts
+I've implemented a checkbox to disable displaying inactive or non-existing accounts.
+
 ## Warning
 This extension has the permission to read from your WhatsApp Web screen. As you can see in the source code, that permission is not used in a bad way. But, take care if you download this extension from anywhere else but this repo!
 
