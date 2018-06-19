@@ -230,6 +230,8 @@
 			style += "#btnCloseWhatsAllApp:hover { box-shadow: none; top:16px; cursor: pointer; }";
 			style += "#btnCloseWhatsAllApp .titleText {text-align: center; font-size: 13px; padding-top: 18px; color: white; }";
 			style += "#chkShowRealAccounts {margin: 0 5px 0 15px !important;}";
+			style += "#inpFirstNumber, #inpLastNumber {user-select: all !important; }";
+			style += "#inpFirstNumber::selection, #inpLastNumber::selection { background-color: #43d854; }";
 			var styleEl = document.createElement("style");
 			styleEl.innerHTML = style;
 			body.appendChild(styleEl);
