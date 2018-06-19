@@ -1,7 +1,7 @@
 /*
  Whats All App
  Enumerate of phonenumbers, profile pics, about texts and online statuses
- 30-05-2018
+ 19-06-2018
  (c) 2018 - Loran Kloeze - loran@ralon.nl 
  
  https://github.com/LoranKloeze/WhatsAllApp
@@ -61,7 +61,10 @@
 					console.log('Next 100...');
 					var lastClientNrForLoop = clientNr + 100;
 					for(;clientNr <= lastClientNrForLoop && clientNr <= lastNr; clientNr++) {
-						divClientBoxes.appendChild(createClientBox(clientNr, "", "" ));
+						var box = createClientBox(clientNr, "", "" );
+						if (box !== null) {
+							divClientBoxes.appendChild(box);
+						}						
 					}
 					if (clientNr > lastNr)
 						clearInterval(clientBoxCreateT);
@@ -125,6 +128,14 @@
 			var btnStartIndexer = document.createElement("button");
 			btnStartIndexer.id = 'btnStartIndexer';
 			btnStartIndexer.innerHTML = 'Start indexer';
+			
+			var chkShowRealAccounts = document.createElement("input");
+			chkShowRealAccounts.type = 'checkbox';
+			chkShowRealAccounts.id = 'chkShowRealAccounts';
+			chkShowRealAccounts.value = '1';
+			var chkShowRealAccountsLabel = document.createElement("label");
+			chkShowRealAccountsLabel.appendChild(chkShowRealAccounts);
+			chkShowRealAccountsLabel.innerHTML += 'Only show existing accounts';
 
 			containerDiv.appendChild(closeBtnDiv);
 			containerDiv.appendChild(inputFirstNumberLabel);
@@ -133,6 +144,7 @@
 			containerDiv.appendChild(inputLastNumber);
 			containerDiv.appendChild(document.createElement("br"));
 			containerDiv.appendChild(btnStartIndexer);
+			containerDiv.appendChild(chkShowRealAccountsLabel);
 			containerDiv.appendChild(document.createElement("hr"));
 			var clientBoxesDiv = document.createElement("div");
 			clientBoxesDiv.id = 'divClientBoxes';
@@ -154,6 +166,7 @@
 			style += "position: fixed; top: 15px; right: 15px; z-index: 99999; box-shadow: 0 1px 1px 0 rgba(0,0,0,0.06), 0 2px 5px 0 rgba(0,0,0,0.2);}";
 			style += "#btnCloseWhatsAllApp:hover { box-shadow: none; top:16px; cursor: pointer; }";
 			style += "#btnCloseWhatsAllApp .titleText {text-align: center; font-size: 13px; padding-top: 18px; color: white; }";
+			style += "#chkShowRealAccounts {margin: 0 5px 0 15px !important;}";
 			var styleEl = document.createElement("style");
 			styleEl.innerHTML = style;
 			body.appendChild(styleEl);
@@ -163,6 +176,7 @@
 		
 		// Create a floated div per phonenumber and execute WhatsApp API queries
 		function createClientBox(phonenumber) {
+			var dontShowNonExisting = document.getElementById('chkShowRealAccounts').checked;
 			var divBox = document.createElement("div");
 			divBox.classList.add('indexerClientBox');
 			divBox.id = 'p'+phonenumber;
@@ -185,6 +199,12 @@
 					if (d.img === undefined) {
 						imgTag.src = imgSrcNoneFound;
 						imgATag.href = '';
+						if (dontShowNonExisting) {
+							divBox.style.display = 'none';
+						} else {
+							divBox.style.display = '';							
+						}
+						
 					} else {
 						imgTag.src = d.img;
 						imgATag.href = '#';
