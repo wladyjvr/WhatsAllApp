@@ -236,6 +236,8 @@
 			styleEl.innerHTML = style;
 			body.appendChild(styleEl);
 			body.appendChild(containerDiv);
+			
+			document.getElementById('chkShowRealAccounts').checked = true;
 		}
 		
 		
