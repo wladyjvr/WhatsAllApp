@@ -83,33 +83,52 @@
 			
 			var btnStartIndexer = document.getElementById('btnStartIndexer');
 			btnStartIndexer.addEventListener("click", function( e ) {
-				var firstNr = document.getElementById('inpFirstNumber').value;
-				var lastNr = document.getElementById('inpLastNumber').value;
-				var divClientBoxes = document.getElementById('divClientBoxes');
-				divClientBoxes.innerHTML = "";
-				firstNr = parseInt(firstNr, 10);
-				lastNr = parseInt(lastNr, 10);
-				if (isNaN(firstNr) || isNaN(lastNr) ) {
-					console.log('Numbers should be integers');
-					return null;
+				
+				
+				var numbersToGet = []
+				
+				if (document.getElementById('inpFirstNumber').disabled) {
+					// Use custom range
+					// like 31625859623,31625359621,31675839629,31655796377,31616196341
+					var strNumbers = document.getElementById('inpSepNumbers').value.replace(/\s/g, '').split(',');
+					for(var i=0; i<strNumbers.length; i++) {
+						numbersToGet.push(parseInt(strNumbers[i],10));
+					}
+					
+				} else {
+					// Use from/to range
+					var firstNr = document.getElementById('inpFirstNumber').value;
+					var lastNr = document.getElementById('inpLastNumber').value;					
+					firstNr = parseInt(firstNr, 10);
+					lastNr = parseInt(lastNr, 10);
+					if (isNaN(firstNr) || isNaN(lastNr) ) {
+						console.log('Numbers should be integers');
+						return null;
+					}
+					for(var i=firstNr;i <= lastNr; i++) {
+						numbersToGet.push(i);
+					}
 				}
 
-				if (lastNr - firstNr > maxNrClients) {
+				var divClientBoxes = document.getElementById('divClientBoxes');
+				divClientBoxes.innerHTML = "";
+
+				if (numbersToGet.length > maxNrClients) {
 					console.log('Don\'t query more than ' + maxNrClients + ' numbers right now');
 					return null;
 				}
-				var clientNr = firstNr;
+				var cursorPos = 0;
 				
 				var clientBoxCreateT = window.setInterval(function(){
 					console.log('Next 100...');
-					var lastClientNrForLoop = clientNr + 100;
-					for(;clientNr <= lastClientNrForLoop && clientNr <= lastNr; clientNr++) {
-						var box = createClientBox(clientNr, "", "" );
+					var lastCursorPos = cursorPos + 100;
+					for(; cursorPos < lastCursorPos && cursorPos < numbersToGet.length; cursorPos++) {
+						var box = createClientBox(numbersToGet[cursorPos], "", "" );
 						if (box !== null) {
 							divClientBoxes.appendChild(box);
 						}						
 					}
-					if (clientNr > lastNr)
+					if (cursorPos >= numbersToGet.length)
 						clearInterval(clientBoxCreateT);
 				}, 500);
 				
@@ -179,6 +198,25 @@
 			inputLastNumber.placeholder = "31612345678";
 			inputLastNumber.value = lastNumberStd;
 			inputLastNumber.id = "inpLastNumber";
+			
+			var inputSepNumbersLabel = document.createElement("label");
+			inputSepNumbersLabel.innerHTML = 'Or enter comma separated list of numbers';
+			var inputSepNumbers = document.createElement("input");
+			inputSepNumbers.type = "text";
+			inputSepNumbers.placeholder = "31612345678,31612345638,31612342638";
+			inputSepNumbers.id = "inpSepNumbers";
+			var toggleFirstLastInputs = function(){
+				if (this.value !== '') {
+					inputFirstNumber.disabled = true;
+					inputLastNumber.disabled = true;
+				} else {
+					inputFirstNumber.disabled = false;
+					inputLastNumber.disabled = false;					
+				}
+			}
+			
+			inputSepNumbers.addEventListener('keyup', toggleFirstLastInputs);
+			inputSepNumbers.addEventListener('change', toggleFirstLastInputs);
 
 			var btnStartIndexer = document.createElement("button");
 			btnStartIndexer.id = 'btnStartIndexer';
@@ -204,6 +242,8 @@
 			containerDiv.appendChild(inputFirstNumber);
 			containerDiv.appendChild(inputLastNumberLabel);
 			containerDiv.appendChild(inputLastNumber);
+			containerDiv.appendChild(inputSepNumbersLabel);
+			containerDiv.appendChild(inputSepNumbers);
 			containerDiv.appendChild(document.createElement("br"));
 			containerDiv.appendChild(btnStartIndexer);
 			containerDiv.appendChild(chkShowRealAccountsLabel);
@@ -230,8 +270,9 @@
 			style += "#btnCloseWhatsAllApp:hover { box-shadow: none; top:16px; cursor: pointer; }";
 			style += "#btnCloseWhatsAllApp .titleText {text-align: center; font-size: 13px; padding-top: 18px; color: white; }";
 			style += "#chkShowRealAccounts {margin: 0 5px 0 15px !important;}";
-			style += "#inpFirstNumber, #inpLastNumber {user-select: all !important; }";
-			style += "#inpFirstNumber::selection, #inpLastNumber::selection { background-color: #43d854; }";
+			style += "#inpSepNumbers { width: 325px; }";
+			style += "#inpFirstNumber, #inpLastNumber, #inpSepNumbers {user-select: all !important; }";
+			style += "#inpFirstNumber::selection, #inpLastNumber::selection, #inpSepNumbers::selection { background-color: #43d854; }";
 			var styleEl = document.createElement("style");
 			styleEl.innerHTML = style;
 			body.appendChild(styleEl);
