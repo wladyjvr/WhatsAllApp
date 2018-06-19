@@ -24,6 +24,9 @@ You can now download the numbers + their corresponding profile pictures and stat
 ### Show only active accounts
 I've implemented a checkbox to disable displaying inactive or non-existing accounts.
 
+### Enter custom numbers
+You can now enter a comma separated list of numbers to iterate over instead of a hard range.
+
 ## Warning
 This extension has the permission to read from your WhatsApp Web screen. As you can see in the source code, that permission is not used in a bad way. But, take care if you download this extension from anywhere else but this repo!
 
