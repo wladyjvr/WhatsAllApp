@@ -113,7 +113,12 @@
 						clearInterval(clientBoxCreateT);
 				}, 500);
 				
-				btnDownloadZip.disabled = false;
+				if (document.getElementById('chkShowRealAccounts').checked) {
+					btnDownloadZip.disabled = false;
+				} else {
+					btnDownloadZip.disabled = true;
+				}
+				
 
 
 			});
