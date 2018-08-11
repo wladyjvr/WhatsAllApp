@@ -1,4 +1,4 @@
-The script should work again for now. Thank you [@karopass](https://github.com/karopass) for the pointers. We'll find out for how long when WhatsApp decides to change their API...
+At this moment you may experience that the green button does not appear. I have fixed it but not yet pushed it to this repo. Why? Read this: https://github.com/LoranKloeze/WhatsAllApp/issues/27#issuecomment-412271640
 
 ### Donations are still welcome :)
 
