@@ -1,4 +1,4 @@
-At this moment you may experience that the green button does not appear. I have fixed it but not yet pushed it to this repo. Why? Read this: https://github.com/LoranKloeze/WhatsAllApp/issues/27#issuecomment-412271640
+At this moment you may experience that the green button does not appear or that you see console errors like 'cannot read property '1' of null'. WhatsApp changed their API. I have fixed both bugs but have not yet pushed it to this repo. Why? Read this: https://github.com/LoranKloeze/WhatsAllApp/issues/27#issuecomment-412271640
 
 ### Donations are still welcome :)
 
