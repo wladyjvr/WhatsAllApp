@@ -1,6 +1,8 @@
 At this moment you may experience that the green button does not appear or that you see console errors like 'cannot read property '1' of null'. WhatsApp changed their API. I have fixed both bugs but have not yet pushed it to this repo. Why? Read this: https://github.com/LoranKloeze/WhatsAllApp/issues/27#issuecomment-412271640
 
 ## 🎉🎈🎉 WhatsAllApp Pro is coming! 🎉🎈🎉 
+![Preview dropbar](https://i.imgur.com/0YYh20T.png)
+
 22-08-2018: at this moment, I started the development of WhatsAllApp Pro. There is a huge demand for offical support for WhatsAllApp. The Pro version will feature a new UI, some more functionality, faster releases of bug fixes and basic email support. The timeline is a beta release somewhere in November.
 If you want to back the Pro project at this moment, you get a 75% discount on the $35 monthly fee for one year. That makes you an early bird. What do early birds get?
 - All the features mentioned
