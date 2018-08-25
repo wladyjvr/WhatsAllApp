@@ -259,12 +259,14 @@
 			style += "#statusIndexer input {margin: 0 25px 0 0; padding: 5px;}";
 			style += "#statusIndexer button {margin: 10px 0; border: solid 1px black; padding: 3px; border-radius: 3px; }";
 			style += "#statusIndexer button:hover {background-color: #58e870;}";
-			style += "#statusIndexer .indexerClientBox {float: left; width: 120px; text-align: center; margin: 15px; height: 65px;}";
+			style += "#statusIndexer .indexerClientBox {float: left; width: 120px; text-align: center; margin: 15px; height: 85px;}";
 			style += "#statusIndexer img {width: 32px; height: 32px;}";
 			style += "#statusIndexer img.isOffline {border-left: solid 5px orange;}";
 			style += "#statusIndexer img.isOnline {border-left: solid 5px green;}";
 			style += "#statusIndexer .indexerPhone {font-size: 13px; margin: 2px; font-weight: bold;}";
 			style += "#statusIndexer .indexerStatus {font-size: 11px; margin: 2px;}";
+			style += "#statusIndexer .indexerLastOnline {font-size: 11px; margin: 2px; font-weight: bold;}";
+			style += "#statusIndexer .indexerName {font-size: 11px; margin: 2px; font-weight: bold; text-decoration: underline;}";
 			style += "#btnCloseWhatsAllApp { height: 50px; border-radius: 25px; width: 50px; background-color: #f44336;  ";
 			style += "position: fixed; top: 15px; right: 15px; z-index: 99999; box-shadow: 0 1px 1px 0 rgba(0,0,0,0.06), 0 2px 5px 0 rgba(0,0,0,0.2);}";
 			style += "#btnCloseWhatsAllApp:hover { box-shadow: none; top:16px; cursor: pointer; }";
@@ -344,6 +346,7 @@
 				// Cut it out when UI is no longer active
 				if (document.getElementById('statusIndexer') == null)
 					return;
+                WLAPWAPStore.subscribePresence( nr + '@c.us')
 				
 				WLAPWAPStore.statusFind( nr + '@c.us').then(function(d){
 					var el = document.getElementById('p'+nr);
@@ -356,24 +359,44 @@
 			};
 			statusFindRoutine(phonenumber);
 
+			var nameFindRoutine = function(nr) {
 
-			/*WLAPStore.Presence.find( phonenumber + '@c.us').then(function(d){
-				if (d.isOnline)
-					clientImg.classList.add('isOnline');
-				else
-					clientImg.classList.add('isOffline');
+                // Cut it out when UI is no longer active
+                if (document.getElementById('statusIndexer') == null)
+                    return;
+                WLAPStore.Contact.find(nr + '@c.us').then(function(d){
+                    var el = document.getElementById('p'+nr);
+                    if (el && d.isMyContact) {
+                        el.getElementsByClassName('indexerName')[0].innerHTML = d.formattedName;
+					}
 
-			});*/
+                }, function(e){
+                    // Server is throttling/rate limiting, we try it again
+                    nameFindRoutine(nr);
+                });
+            };
+            nameFindRoutine(phonenumber);
+
+            clientImg.classList.add('isOffline');
+
+			var lastOnline = document.createElement('p');
+            lastOnline.className = 'indexerLastOnline';
+            var clientName = document.createElement('div');
+            clientName.className = 'indexerName';
 
 			divBox.appendChild(clientImgA);
 			divBox.appendChild(clientPhone);
+			divBox.appendChild(clientName);
 			divBox.appendChild(clientStatus);
+            divBox.appendChild(lastOnline);
 			return divBox;
 		}
 
 
 		// Check online/offline status every 10 sec
-		window.setInterval(function() {					
+		window.setInterval(function() {
+			console.log('Checking for offline/online')
+
 			// Cut it out when UI is no longer active
 			if (document.getElementById('statusIndexer') == null)
 				return;
@@ -385,8 +408,11 @@
 				if (clientBox !== null) {
 					var img = clientBox.getElementsByTagName('img')[0];
 					img.classList.remove('isOnline');
-					if (m.isOnline) {
+
+                    if (m.isOnline) {
 						console.log(id + ' is online');
+                        var lastOnlineP = clientBox.getElementsByClassName('indexerLastOnline')[0];
+                        lastOnlineP.innerText = 'Last seen: ' + moment().format('HH:mm');
 						clientBox.parentNode.prepend(clientBox);
 						img.classList.remove('isOffline');
 						img.classList.add('isOnline');
