@@ -18,6 +18,8 @@ Do you like WhatsAllApp and do you want to give me a little support? Even a smal
 ### Show 'last seen time' for some accounts
 Chat session accounts now show the 'last seen time'. Chat session accounts are accounts that had an active chat session with you before. Those sessions could have been 1-on-1 or group sessions.
 
+![Last seen time](https://i.imgur.com/YBSp4qr.png "Last seen time")
+
 ### Download to zip-file
 You can now download the numbers + their corresponding profile pictures and statuses to a zip-file. The file contains the profile pictures in jpeg format and a csv-file with numbers and statuses. Give it a try, it seems to be still a little buggy.
 
