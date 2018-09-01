@@ -8,9 +8,16 @@ Checkout the background information at https://www.lorankloeze.nl/2017/05/07/col
  
 This is a Proof of Concept packed in a Chrome Extension. It's not bug free and you may run into errors. If there was a stage before alpha it would be in that stage. Use it wisely!
 
+Do you like WhatsAllApp and do you want to give me a little support? Even a small donation like $2 for a cup of coffee ☕  helps me a lot! :)
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PHVYMCEVZNLPA)
+
 ![Extension in action](https://www.lorankloeze.nl/wp-content/uploads/2017/05/whatsapp_script_2.png "Extension in action")
 
 ## New functionality
+### Show 'last seen time' for some accounts
+Chat session accounts now show the 'last seen time'. Chat session accounts are accounts that had an active chat session with you before. Those sessions could have been 1-on-1 or group sessions.
+
 ### Download to zip-file
 You can now download the numbers + their corresponding profile pictures and statuses to a zip-file. The file contains the profile pictures in jpeg format and a csv-file with numbers and statuses. Give it a try, it seems to be still a little buggy.
 
