@@ -1,6 +1,3 @@
-## Does the script not work?
-At this moment you may experience that the green button does not appear or that you see console errors like 'cannot read property '1' of null'. WhatsApp changed their API. __I have fixed both bugs__ but have not yet pushed it to this repo. Why? Read this: https://github.com/LoranKloeze/WhatsAllApp/issues/27#issuecomment-412271640
-
 ## 🎉🎈🎉 WhatsAllApp Pro is coming! 🎉🎈🎉 
 ![Alt Text](https://i.imgur.com/Vj0GDAS.gif)
 
