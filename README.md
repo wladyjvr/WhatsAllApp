@@ -1,11 +1,4 @@
-## 🎉🎈🎉 WhatsAllApp Pro is coming! 🎉🎈🎉 
-![Alt Text](https://i.imgur.com/Vj0GDAS.gif)
 
-22-08-2018: I started the development of WhatsAllApp Pro. There is a huge demand for offical support for WhatsAllApp. The Pro version will feature a new UI, some more functionality, faster releases of bug fixes and basic email support. The timeline is a beta release somewhere in November.
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PHVYMCEVZNLPA)
-
-Want to be an early bird to get a nice discount? Send me an email at loran@ralon.nl!
 
 
 # WhatsAllApp
@@ -45,15 +38,6 @@ This extension has the permission to read from your WhatsApp Web screen. As you 
 3. After a few seconds you'll see a table of phonenumbers, profile pics, about texts
 
 ## FAQ
-* __Can you update the script so it becomes a mass surveillance tool?__
-
-   No, it has its privacy concerns already as it is. Ask your local secret service for more info.
-   
-* __Can you update the script so it includes feature X?__
-
-   ~~Maybe: tell me (loran@ralon.nl) what feature you'd like to have included and I'll make you a nice offer :)~~
-   No, at this moment I don't have the time.
-
 * __How about rate limiting?__
 
    There is some kind of rate limiting in place but what exactly the limits are and their penalties for exceeding them, I don't know yet. Sometimes I get a '427 Too many requests' but a few minutes later I can continue using the API calls.
@@ -61,4 +45,8 @@ This extension has the permission to read from your WhatsApp Web screen. As you 
 * __Why is this extension not available in the Chrome Web Store?__
 
    Because it's a PoC and because I'll have to pay $5. Since I'm Dutch I don't want to pay unless I have absolutely no other choice. So there you go :)
+   
+* __Will there be supported pro version?__
+
+  Development of a pro version is in the works. If there is enough commercial support I will release it at some point.
    
