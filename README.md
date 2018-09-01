@@ -1,13 +1,16 @@
-The script should work again for now. Thank you [@karopass](https://github.com/karopass) for the pointers. We'll find out for how long when WhatsApp decides to change their API...
+## Does the script not work?
+At this moment you may experience that the green button does not appear or that you see console errors like 'cannot read property '1' of null'. WhatsApp changed their API. __I have fixed both bugs__ but have not yet pushed it to this repo. Why? Read this: https://github.com/LoranKloeze/WhatsAllApp/issues/27#issuecomment-412271640
 
-### Donations are still welcome :)
+## 🎉🎈🎉 WhatsAllApp Pro is coming! 🎉🎈🎉 
+![Alt Text](https://i.imgur.com/Vj0GDAS.gif)
 
-
-If you make some money with it, I'd like to have a little slice of the cake as well :)
-
-Bitcoin address: 1DTqXrfnQrUutj7bGtKuhc5hP2DhZLXMC8
+22-08-2018: I started the development of WhatsAllApp Pro. There is a huge demand for offical support for WhatsAllApp. The Pro version will feature a new UI, some more functionality, faster releases of bug fixes and basic email support. The timeline is a beta release somewhere in November.
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PHVYMCEVZNLPA)
+
+Want to be an early bird to get a nice discount? Send me an email at loran@ralon.nl!
+
+
 # WhatsAllApp
 Chrome Extension that creates a UI overlay for WhatsApp Web to enumerate phone numbers, profile pics and about texts
 
