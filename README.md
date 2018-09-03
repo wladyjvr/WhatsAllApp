@@ -14,9 +14,9 @@ You can download a zip file of the currently displayed accounts. The file contai
 Do you like WhatsAllApp and do you want to give me a little support? Even a small donation like $2 for a cup of coffee ☕  helps me a lot! :)	
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PHVYMCEVZNLPA)
- 
-![shot_2](https://user-images.githubusercontent.com/12978070/44980608-a6891600-af70-11e8-8cf6-eaae1be8c644.png)
-![shot_3](https://user-images.githubusercontent.com/12978070/44980615-abe66080-af70-11e8-9e9e-e38866cf0d27.png)
+
+![shot_10](https://user-images.githubusercontent.com/12978070/44982248-8576f400-af75-11e8-993c-1ce25af3c3d4.png) 
+![shot_11](https://user-images.githubusercontent.com/12978070/44982251-860f8a80-af75-11e8-9f09-32057eeaaa82.png)
 ![shot_1](https://user-images.githubusercontent.com/12978070/44980623-b30d6e80-af70-11e8-9f19-2083f4816549.png)
 
 ## *What are chat accounts?
