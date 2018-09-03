@@ -8,6 +8,7 @@ chrome.storage.sync.get('pluginEnabled', function(data) {
     if (data.pluginEnabled) {
         const rootEl = document.createElement('div')
         rootEl.id = 'whatsallapp-root'
+        rootEl.setAttribute('data-extension-id', chrome.runtime.id)
         document.body.appendChild(rootEl)
     } else {
     }

@@ -6,6 +6,7 @@ import InputPanel from "./InputPanel"
 import ResultsPanel from "./ResultsPanel"
 import L from '../utils/Log'
 import { getApi } from '../utils/WWapApi'
+import demoAccounts from '../utils/demoAccounts'
 
 
 const StyledContainer = styled.div`
@@ -33,7 +34,7 @@ class MainContent extends Component {
             hydraterFastId: -1,
             hydraterSlowId: -1,
             staleAccountsId: -1,
-            accounts: []
+            accounts: props.demoMode ? demoAccounts : []
         }
 
         this.staleAccounts = []
@@ -55,8 +56,11 @@ class MainContent extends Component {
     }
 
     componentDidMount() {
-        this.startStaleAccountsSync()
-        this.startWappHydrater()
+        if (!this.props.demoMode) {
+            this.startStaleAccountsSync()
+            this.startWappHydrater()
+        }
+
     }
 
     componentWillUnmount() {
@@ -205,7 +209,7 @@ class MainContent extends Component {
                     <NavBar/>
                     <div className="mb-3"/>
                     <Container>
-                        <InputPanel onSearch={this.setupPhoneNumbers}/>
+                        <InputPanel demoMode={this.props.demoMode} onSearch={this.setupPhoneNumbers}/>
                         <div className="mb-3"/>
                         {this.state.accounts.length > 0 ? <ResultsPanel accounts={this.state.accounts}/> : <span/> }
                     </Container>

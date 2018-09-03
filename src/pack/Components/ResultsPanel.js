@@ -121,7 +121,7 @@ class ResultsPanel extends Component {
                     <CardHeader><FontAwesomeIcon icon={faInfo}/>{` Showing ${accounts.length} phone numbers`}</CardHeader>
                     <CardBody>
 
-                        {accounts.length > 25 && <Alert color="warning">
+                        {this.props.accounts.length > 25 && <Alert color="warning">
                             You have selected more than 25 numbers, this will eventually trigger the WhatsApp rate limiter
                         </Alert>}
                         <Toolbar

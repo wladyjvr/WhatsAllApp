@@ -5,7 +5,7 @@ class AppContainer extends Component {
     render() {
         return(
             <div>
-                <OverlayContainer/>
+                <OverlayContainer demoMode={false}/>
             </div>
 
         )

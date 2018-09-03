@@ -79,7 +79,7 @@ class OverlayContainer extends Component {
             styleBootstrap.use()
             this.state = {
                 isMainContentVisible: true,
-                bootstrapRefs: 1
+                bootstrapRefs: 1,
             }
         } else {
             this.state = {
@@ -124,7 +124,7 @@ class OverlayContainer extends Component {
 
         return (
             <StyledContainer>
-                <MainContent isOpen={this.state.isMainContentVisible}/>
+                <MainContent demoMode={this.props.demoMode} isOpen={this.state.isMainContentVisible}/>
                 <TopBar>WhatsAllApp Community Editon 0.0.1</TopBar>
                 {button}
             </StyledContainer>

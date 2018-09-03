@@ -44,6 +44,14 @@ module.exports = {
                 use: [
                      'svg-inline-loader'
                 ]
+            },{
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {}
+                    }
+                ]
             }
         ]
     },

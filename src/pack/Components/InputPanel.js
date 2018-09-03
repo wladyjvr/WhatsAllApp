@@ -16,10 +16,10 @@ class InputPanel extends Component {
         this.onStartRangeSearch = this.onStartRangeSearch.bind(this)
 
         this.state = {
-            rangeFirstVal: 31653109400,
-            rangeLastVal:  31653109410,
+            rangeFirstVal: undefined,
+            rangeLastVal:  undefined,
             isRangeValid: true,
-            listVal: '',
+            listVal: props.demoMode ? '3151234567,3151234569,3151844577,56288592' : '',
             isListValid: true
         }
     }
