@@ -8,6 +8,8 @@ WhatsAllApp is a Chrome extension which creates an overlay of extra information 
 
 When a WhatsApp contact comes online, the corresponding entry will have a green background and the 'last seen' entry is updated.
 
+You can download a zip file of the currently displayed accounts. The file contains a .csv file and jpegs of all the displayed profile pictures.
+
 Do you like WhatsAllApp and do you want to give me a little support? Even a small donation like $2 for a cup of coffee ☕  helps me a lot! :)	
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PHVYMCEVZNLPA)
