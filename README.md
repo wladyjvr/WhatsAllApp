@@ -32,7 +32,7 @@ This extension is not available in the Chrome store. You have to install it manu
 5. Click 'load unpacked extension'	
 6. Select the dist/ folder from step 2	
 7. The extension should appear at the top of the list
-8. Refresh you WhatsApp web
+8. Refresh your WhatsApp web
 9. An orange slider should appear at the top of the screen
 
 ## Usage
