@@ -20,7 +20,7 @@ Do you like WhatsAllApp and do you want to give me a little support? Even a smal
 ![shot_1](https://user-images.githubusercontent.com/12978070/44980623-b30d6e80-af70-11e8-9f19-2083f4816549.png)
 
 ## *What are chat accounts?
-Chat accounts are WhatsApp users that had a chat session with you before, even if it was 2 years ago. This includes 1 on 1 chats or group chats.
+Chat accounts are WhatsApp users that had a chat session with you before, even if it was 2 years ago. This includes 1 on 1 chats and group chats.
 
 ## Installation
 This extension is not available in the Chrome store. You have to install it manually. That is an easy task, just following these steps:
