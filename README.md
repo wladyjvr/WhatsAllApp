@@ -1,4 +1,5 @@
 # WhatsAllApp Community edition
+**September 2018 update**
 
 WhatsAllApp is a Chrome extension which creates an overlay of extra information on top of WhatsApp web. This is the community edition and  at this moment it enumerates and shows the following information:
 *   Profile pictures
@@ -8,6 +9,12 @@ WhatsAllApp is a Chrome extension which creates an overlay of extra information 
 
 When a WhatsApp contact comes online, the corresponding entry will have a green background and the 'last seen' entry is updated.
 
+You can download a zip file of the currently displayed accounts. The file contains a .csv file and jpegs of all the displayed profile pictures.
+
+Do you like WhatsAllApp and do you want to give me a little support? Even a small donation like $2 for a cup of coffee ☕  helps me a lot! :)	
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PHVYMCEVZNLPA)
+ 
 ![shot_2](https://user-images.githubusercontent.com/12978070/44980608-a6891600-af70-11e8-8cf6-eaae1be8c644.png)
 ![shot_3](https://user-images.githubusercontent.com/12978070/44980615-abe66080-af70-11e8-9e9e-e38866cf0d27.png)
 ![shot_1](https://user-images.githubusercontent.com/12978070/44980623-b30d6e80-af70-11e8-9f19-2083f4816549.png)
@@ -21,7 +28,26 @@ This extension is not available in the Chrome store. You have to install it manu
 1. Click 'clone or download' and choose to download the ZIP file	
 2. Extract the folder from the ZIP file	
 3. Open up chrome://extensions/	
-4. Enable developer mode at the top of the screen by clicking the checkbox	
+4. Enable developer mode at the top of the screen by clicking the slider	
 5. Click 'load unpacked extension'	
 6. Select the dist/ folder from step 2	
 7. The extension should appear at the top of the list
+8. Refresh you WhatsApp web
+9. An orange slider should appear at the top of the screen
+
+## Usage
+Click on the arrow at the top of WhatsApp web. Enter a range of numbers or enter a list of comma separated numbers to search for. Keep in mind: the WhatsApp rate limiter is quite aggressive so don't search for hundreds of numbers at the same time.
+
+## FAQ
+
+* __I don't see online statuses of some numbers__	
+
+    Then it is problably someone you never had contact with before. You had to have a chat session before with someone to get information about their online status or display name.
+    
+* __The extension doesn't work!__
+
+    WhatsAllApp is built on top of the undocumentend API of WhatsApp. They are free to change their API anytime which means that this extension can break anytime. Create an issue and wait for the bug fix.
+    
+* __How about the Pro version?__
+
+    It is currently in the works. The most important feature is the right to have individual support and access to fast bug fixes. Another feature will be the possibility of keeping track of an account to see how their online statuses changes over time.
