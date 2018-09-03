@@ -1,4 +1,5 @@
 # WhatsAllApp Community edition
+**September 2018 update**
 
 WhatsAllApp is a Chrome extension which creates an overlay of extra information on top of WhatsApp web. This is the community edition and  at this moment it enumerates and shows the following information:
 *   Profile pictures
