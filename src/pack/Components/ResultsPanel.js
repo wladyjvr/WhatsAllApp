@@ -82,7 +82,6 @@ class ResultsPanel extends Component {
             if (account.photoUrl) {
                 ZipFileFromUrl(zip, account.phoneNr + '.jpg', account.photoUrl, null, () => {
                     nrOfImgFetchFinished++;
-                    console.log(`${nrOfImgFetchFinished} - ${nrOfAccounts} `)
                     if (nrOfImgFetchFinished === nrOfAccounts) {
                         zip.file('db.csv', csv);
                         L('Saving to zip')

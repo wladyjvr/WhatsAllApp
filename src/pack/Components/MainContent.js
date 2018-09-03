@@ -51,7 +51,6 @@ class MainContent extends Component {
     }
 
     setStaleAccounts(accounts) {
-        console.log('Setting ' + accounts.length + ' stale accounts')
         this.staleAccounts = accounts
     }
 
