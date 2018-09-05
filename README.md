@@ -38,6 +38,13 @@ This extension is not available in the Chrome store. You have to install it manu
 ## Usage
 Click on the arrow at the top of WhatsApp web. Enter a range of numbers or enter a list of comma separated numbers to search for. Keep in mind: the WhatsApp rate limiter is quite aggressive so don't search for hundreds of numbers at the same time.
 
+## Development
+1. Clone the repo ```git clone https://github.com/LoranKloeze/WhatsAllApp.git```
+2. Make sure [Node.js](https://nodejs.org/en/) is installed
+3. Run ```npm install``` or ```yarn install```
+4. Run ```npx webpack``` or ```npx webpack --watch``` to pack the code from /src to /dist
+5. Load the unpacked extension from /dist in Chrome
+
 ## FAQ
 
 * __I don't see the online statuses of some numbers, why?__
