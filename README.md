@@ -30,7 +30,7 @@ This extension is not available in the Chrome store. You have to install it manu
 3. Open up chrome://extensions/	
 4. Enable developer mode at the top of the screen by clicking the slider	
 5. Click 'load unpacked extension'	
-6. Select the dist/ folder from step 2	
+6. **Select the dist/ folder from step 2**
 7. The extension should appear at the top of the list
 8. Refresh your WhatsApp web
 9. An orange slider should appear at the top of the screen
