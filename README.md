@@ -51,6 +51,10 @@ Click on the arrow at the top of WhatsApp web. Enter a range of numbers or enter
 
     Then it is problably someone you never had contact with before. You had to have a chat session before with someone to get information about their online status or display name.
     
+* __But I still want to see the online presence of users that never had a chat session with me before, I even want to pay for it!__
+
+    No, not possible.
+    
 * __The extension doesn't work!__
 
     WhatsAllApp is built on top of the undocumentend API of WhatsApp. They are free to change their API anytime which means that this extension can break anytime. So if something like that happens, create an issue and wait for the bug fix.
