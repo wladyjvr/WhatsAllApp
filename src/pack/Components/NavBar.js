@@ -35,8 +35,8 @@ const NavBar = () => {
                     </LogoAndText>
                 </NavbarBrand>
                 <Nav className="ml-auto" navbar>
-                    <span className="text-white small mr-3">Do you enjoy WhatsAllApp? Please <SNavLink target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PHVYMCEVZNLPA">donate</SNavLink>, everything is welcome! 🙂</span>
-                    <span><a target="_blank" className="text-white" href="https://github.com/LoranKloeze/WhatsAllApp"><FontAwesomeIcon icon={faGithub}/></a> </span>
+                    <NavItem><span className="text-white small mr-3">Do you enjoy WhatsAllApp? Please <SNavLink target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PHVYMCEVZNLPA">donate</SNavLink>, everything is welcome! 🙂</span></NavItem>
+                    <NavItem><span><a target="_blank" className="text-white" href="https://github.com/LoranKloeze/WhatsAllApp"><FontAwesomeIcon icon={faGithub}/></a> </span></NavItem>
                 </Nav>
             </Navbar>
         </div>
