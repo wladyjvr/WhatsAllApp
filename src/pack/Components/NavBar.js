@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import styled from 'styled-components'
 import {Navbar, NavbarBrand, Nav, NavItem, NavLink, Badge} from 'reactstrap'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import {faGithub} from "@fortawesome/free-brands-svg-icons"
+import {faGithub, faPaypal} from "@fortawesome/free-brands-svg-icons"
 import imgLogo from '../assets/img/logo.svg'
 
 const LogoAndText = styled.div`
@@ -13,6 +13,14 @@ const LogoAndText = styled.div`
   margin-right: 0.5rem;
   }
   
+`
+
+const SNavLink = styled.a`
+  color: white;
+  font-weight: bold;
+  &:hover {
+    color: white;   
+  }
 `
 
 const NavBar = () => {
@@ -27,6 +35,7 @@ const NavBar = () => {
                     </LogoAndText>
                 </NavbarBrand>
                 <Nav className="ml-auto" navbar>
+                    <span className="text-white small mr-3">Do you enjoy WhatsAllApp? Please <SNavLink target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PHVYMCEVZNLPA">donate</SNavLink>, everything is welcome! 🙂</span>
                     <span><a target="_blank" className="text-white" href="https://github.com/LoranKloeze/WhatsAllApp"><FontAwesomeIcon icon={faGithub}/></a> </span>
                 </Nav>
             </Navbar>
