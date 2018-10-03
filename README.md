@@ -60,7 +60,12 @@ Click on the arrow at the top of WhatsApp web. Enter a range of numbers or enter
     
 * __Can I send you an email for support questions?__ 
 
-    I don't offer free individual support. Please create an issue and ask the community. For paid support send me an email at loran@ralon.nl.
+    I don't offer free individual support. Please create an issue and ask the community. The conditions for paid support are as follows:
+    * The support is for WhatsAllApp Community Edition as published at https://github.com/LoranKloeze/WhatsAllApp 
+    * Costs are  $65 per hour, billed per 15 minutes. First time customers pay $65 up front. All by Paypal.
+    * The support is best effort based meaning there is no guarantee that we can help you in your specific case or in a specific time window but of course we do the best we can.
+    * The first response time is max. 48 hours, after that it depends on the case at hand
+
     
 * __How about the Pro version?__
 
