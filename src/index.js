@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import AppContainer from './pack/AppContainer'
 import { initApi } from "./pack/utils/WWapApi";
 
+// Get all current chat numbers: WAA_Api.WLAPStore.Chat.models.map((x) => x.__x_id.user).join(',')
 
 // Created in injector.js
 const reactRoot = document.getElementById('whatsallapp-root')

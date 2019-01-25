@@ -43,7 +43,7 @@ export const initApi = () => {
                     const regExDynNameStore = /Wap:[a-z]\('"(\w+)"'\)/
                     const res = regExDynNameStore.exec(js_src)
                     const funcName = res[1]
-                    window.webpackJsonp([], {[funcName]: (x, y, z) => Api.WLAPWAPStore = z('"' + funcName + '"')}, funcName)
+                    window.webpackJsonp([], {[funcName]: (x, y, z) => {Api.WLAPWAPStore = z('"' + funcName + '"')}}, funcName)
                     return
                 }
 
