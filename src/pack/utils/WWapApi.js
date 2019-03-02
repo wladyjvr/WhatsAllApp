@@ -14,9 +14,8 @@ export const initApi = () => {
         * */
 
         const scripts = document.getElementsByTagName('script')
-        const regexApp = /\/app\..+.js/
-        const regexApp2 = /\/app2\..+.js/
-        let appScriptUrl, app2ScriptUrl
+        const regexApp = /\/app3\..+.js/
+        let appScriptUrl
 
         // Derive script urls
         for (let i = 0; i < scripts.length; i++) {
@@ -25,9 +24,6 @@ export const initApi = () => {
                 appScriptUrl = src
             }
 
-            if (regexApp2.exec(src) != null) {
-                app2ScriptUrl = src
-            }
         }
 
         // Download scripts, regex them and assign store
@@ -40,10 +36,18 @@ export const initApi = () => {
                 const str_value = td.decode(value)
                 if (done) {
                     js_src += str_value
-                    const regExDynNameStore = /Wap:[a-z]\('"(\w+)"'\)/
-                    const res = regExDynNameStore.exec(js_src)
-                    const funcName = res[1]
-                    window.webpackJsonp([], {[funcName]: (x, y, z) => {Api.WLAPWAPStore = z('"' + funcName + '"')}}, funcName)
+                    const regExDynNameStore1 = /Wap:[a-z]\('"(\w+)"'\)/
+                    const res1 = regExDynNameStore1.exec(js_src)
+                    const funcName1 = res1[1]
+                    window.webpackJsonp([], {[funcName1]: (x, y, z) => {Api.WLAPWAPStore = z('"' + funcName1 + '"')}}, funcName1)
+
+                    const regExDynNameStore2 = /'"(\w+)"':function\(e,t,i\)\{\"use strict\";e\.exports=\{AllStarredMsgs:/
+                    const res2 = regExDynNameStore2.exec(js_src)
+                    const funcName2 = res2[1]
+
+                    window.webpackJsonp([], {[funcName2]: (x, y, z) => Api.WLAPStore = z('"' + funcName2 + '"')}, funcName2)
+                    resolve()
+
                     return
                 }
 
@@ -52,33 +56,7 @@ export const initApi = () => {
 
             })
 
-        }).then(() => {
-            fetch(app2ScriptUrl).then(e => {
-                const reader = e.body.getReader()
-                let js_src = ""
-
-                return reader.read().then(function readMore({done, value}) {
-                    const td = new TextDecoder("utf-8")
-                    const str_value = td.decode(value)
-                    if (done) {
-                        js_src += str_value
-                        const regExDynNameStore = /'"(\w+)"':function\(e,t,a\)\{\"use strict\";e\.exports=\{AllStarredMsgs:/
-                        const res = regExDynNameStore.exec(js_src)
-                        const funcName = res[1]
-
-                        window.webpackJsonp([], {[funcName]: (x, y, z) => Api.WLAPStore = z('"' + funcName + '"')}, funcName)
-                        resolve()
-                        return
-                    }
-
-                    js_src += str_value
-                    return reader.read().then(readMore)
-
-                })
-
-            })
         })
-
 
     })
 }
