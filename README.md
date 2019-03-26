@@ -60,13 +60,8 @@ Click on the arrow at the top of WhatsApp web. Enter a range of numbers or enter
     
 * __Can I send you an email for support questions?__ 
 
-    I don't offer free individual support. Please create an issue and ask the community. The conditions for paid support are as follows:
-    * The support is for WhatsAllApp Community Edition as published at https://github.com/LoranKloeze/WhatsAllApp 
-    * Costs are  $65 per hour, billed per 15 minutes. First time customers pay $65 up front. All by Paypal.
-    * The support is best effort based meaning there is no guarantee that we can help you in your specific case or in a specific time window but of course we do the best we can.
-    * The first response time is max. 48 hours, after that it depends on the case at hand
-
+    I don't offer free individual support. Please create an issue and ask the community.
     
 * __How about the Pro version?__
 
-    It is currently in the works. The most important feature is the right to have individual support and access to fast bug fixes. Another feature will be the possibility of keeping track of an account to see how their online statuses changes over time.
+    There are no plans for a pro version anymore. 
