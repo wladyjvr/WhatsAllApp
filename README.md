@@ -1,16 +1,3 @@
-## [31-05-2019] Not working right now but a fix is available
-WhatsApp changed their undocumented API.
-As usual, I'm gonna publish the fix in 2 weeks. 
-
-**I want the fix right now**
-
-No problem! If you want to receive the fixed WhatsAllApp right away send me $25 via Paypal (https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PHVYMCEVZNLPA) and you'll receive the fixed code by mail. You might not like it but 25 dollars is not a lot of money I think :)
-
-Why I ask for money you ask? Check this: https://github.com/LoranKloeze/WhatsAllApp/issues/27#issuecomment-412271640
-
-
-
-
 # WhatsAllApp Community edition
 
 WhatsAllApp is a Chrome extension which creates an overlay of extra information on top of WhatsApp web. This is the community edition and  at this moment it enumerates and shows the following information:
